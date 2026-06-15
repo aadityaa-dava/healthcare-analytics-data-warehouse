@@ -1,0 +1,32 @@
+# Python
+venv/
+__pycache__/
+.ipynb_checkpoints/
+
+*.pyc
+*.pyo
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# MacOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# PostgreSQL Local Data
+postgres_data/
+
+# Power BI
+*.pbix.autorecovery
+
+# Generated Warehouse Files
+warehouse/fact_provider_utilization.csv
+
+# Raw Source Data
+data/raw/claims.csv

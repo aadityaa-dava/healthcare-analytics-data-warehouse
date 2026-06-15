@@ -1,0 +1,114 @@
+provider_type,provider_count,total_payments,avg_payment,payment_share_pct,specialty_rank
+Nurse Practitioner,203212,10150828418.81,49951.91,8.45,1
+Ophthalmology,17519,8245418771.76,470655.79,6.87,2
+Internal Medicine,93627,7918245121.59,84572.24,6.60,3
+Clinical Laboratory,2743,6928001794.75,2525702.44,5.77,4
+Hematology-Oncology,9158,6874966396.53,750706.09,5.73,5
+Ambulatory Surgical Center,5667,6013483031.26,1061140.47,5.01,6
+Family Practice,83639,5265332572.46,62953.08,4.39,7
+Ambulance Service Provider,9324,4454182844.12,477711.59,3.71,8
+Diagnostic Radiology,32843,4113340990.64,125242.55,3.43,9
+Cardiology,19764,3699996769.85,187208.90,3.08,10
+Physician Assistant,112514,3656112845.11,32494.74,3.05,11
+Physical Therapist in Private Practice,77901,3552229134.86,45599.28,2.96,12
+Dermatology,12616,3266719398.28,258934.64,2.72,13
+Orthopedic Surgery,21674,2797377647.20,129066.05,2.33,14
+Rheumatology,5133,2565394452.84,499784.62,2.14,15
+Podiatry,15526,2550440857.51,164269.02,2.12,16
+Emergency Medicine,50101,2022982546.46,40378.09,1.69,17
+Medical Oncology,3805,1948719486.93,512147.04,1.62,18
+Neurology,16581,1665147401.99,100425.03,1.39,19
+Urology,9466,1618865849.90,171019.00,1.35,20
+General Surgery,21065,1568655315.79,74467.38,1.31,21
+Mass Immunizer Roster Biller,26738,1532587405.40,57318.70,1.28,22
+Radiation Oncology,5045,1476159958.37,292598.60,1.23,23
+Nephrology,9501,1394857029.27,146811.60,1.16,24
+Anesthesiology,41082,1358956301.05,33079.12,1.13,25
+Gastroenterology,14791,1344043669.48,90869.02,1.12,26
+Pathology,12265,1106506477.51,90216.59,0.92,27
+Pulmonary Disease,10766,1059959433.21,98454.34,0.88,28
+Hospitalist,20529,1050654909.32,51179.06,0.88,29
+Physical Medicine and Rehabilitation,8487,991136378.71,116782.89,0.83,30
+Interventional Cardiology,4650,967534009.93,208071.83,0.81,31
+Optometry,31979,943763812.76,29511.99,0.79,32
+Otolaryngology,8942,927834080.93,103761.36,0.77,33
+Centralized Flu,10073,913178500.51,90656.06,0.76,34
+Independent Diagnostic Testing Facility (IDTF),1951,912645140.29,467783.26,0.76,35
+Vascular Surgery,3903,866030326.83,221888.37,0.72,36
+Certified Registered Nurse Anesthetist (CRNA),53495,802244943.24,14996.63,0.67,37
+Psychiatry,19778,655694331.02,33152.71,0.55,38
+Clinical Cardiac Electrophysiology,2559,591429670.95,231117.50,0.49,39
+Infectious Disease,6452,589077772.29,91301.58,0.49,40
+Endocrinology,6433,564723677.77,87785.43,0.47,41
+Neurosurgery,5149,557535017.54,108280.25,0.46,42
+Pharmacy,2938,481238472.20,163797.98,0.40,43
+Allergy/ Immunology,3274,462273793.31,141195.42,0.39,44
+Plastic and Reconstructive Surgery,3907,450375734.58,115274.06,0.38,45
+"Psychologist, Clinical",11986,445585357.62,37175.48,0.37,46
+Chiropractic,32394,441190286.20,13619.51,0.37,47
+General Practice,3556,440618771.82,123908.54,0.37,48
+Pain Management,2836,439501273.20,154972.24,0.37,49
+Occupational Therapist in Private Practice,11309,415213871.08,36715.35,0.35,50
+Obstetrics & Gynecology,22815,406261826.85,17806.79,0.34,51
+Interventional Radiology,2560,376015810.06,146881.18,0.31,52
+Licensed Clinical Social Worker,16435,317709608.05,19331.28,0.26,53
+Interventional Pain Management,1463,294216542.67,201104.95,0.25,54
+Micrographic Dermatologic Surgery,383,280496131.11,732365.88,0.23,55
+Critical Care (Intensivists),5039,276483662.53,54868.76,0.23,56
+Thoracic Surgery,2598,247890793.81,95416.01,0.21,57
+Hand Surgery,1658,220872097.79,133215.98,0.18,58
+Portable X-Ray Supplier,289,218205280.45,755035.57,0.18,59
+Hematology,924,214204808.84,231823.39,0.18,60
+Opioid Treatment Program,863,213314273.09,247177.60,0.18,61
+Geriatric Medicine,1887,195485570.53,103595.96,0.16,62
+Nuclear Medicine,545,190182537.66,348958.78,0.16,63
+Sports Medicine,1950,163857202.42,84029.33,0.14,64
+Cardiac Surgery,1094,127461598.08,116509.69,0.11,65
+Gynecological Oncology,1045,123197653.87,117892.49,0.10,66
+Colorectal Surgery (Proctology),1683,123112839.26,73150.83,0.10,67
+Pediatric Medicine,1774,87440041.75,49289.76,0.07,68
+Speech Language Pathologist,2738,83395282.19,30458.47,0.07,69
+Surgical Oncology,1234,82303982.67,66696.91,0.07,70
+All Other Suppliers,50,72362194.74,1447243.89,0.06,71
+Osteopathic Manipulative Medicine,667,71247661.05,106818.08,0.06,72
+Advanced Heart Failure and Transplant Cardiology,828,69034087.36,83374.50,0.06,73
+Hospice and Palliative Care,1799,62505003.89,34744.30,0.05,74
+Sleep Medicine,876,55845372.43,63750.43,0.05,75
+Audiologist,7608,55515276.36,7296.96,0.05,76
+Certified Clinical Nurse Specialist,1426,46001115.22,32258.85,0.04,77
+Anesthesiology Assistant,3507,34979096.22,9974.08,0.03,78
+Licensed Professional Counselor,3030,31586691.14,10424.65,0.03,79
+Undefined Physician type,182,27682460.91,152101.43,0.02,80
+Preventive Medicine,263,27081601.61,102971.87,0.02,81
+Hematopoietic Cell Transplantation and Cellular Therapy,143,26810372.05,187485.12,0.02,82
+Radiation Therapy Center,27,25094296.44,929418.39,0.02,83
+Undersea and Hyperbaric Medicine,114,23097336.76,202608.22,0.02,84
+Oral Surgery (Dentist only),897,23092508.12,25744.16,0.02,85
+Peripheral Vascular Disease,51,15492178.44,303768.20,0.01,86
+Registered Dietitian or Nutrition Professional,2169,13544303.59,6244.49,0.01,87
+Neuropsychiatry,202,10877479.79,53848.91,0.01,88
+Maxillofacial Surgery,601,10733596.31,17859.56,0.01,89
+Geriatric Psychiatry,164,8482094.16,51720.09,0.01,90
+Public Health or Welfare Agency,196,7900737.86,40309.89,0.01,91
+Addiction Medicine,280,6613547.27,23619.81,0.01,92
+Marriage and Family Therapist,428,4978033.24,11630.92,0.00,93
+Home Infusion Therapy Services,51,4646045.62,91098.93,0.00,94
+Dentist,203,4559703.02,22461.59,0.00,95
+Certified Nurse Midwife,943,3311370.06,3511.53,0.00,96
+Intensive Cardiac Rehabilitation,8,3036674.28,379584.29,0.00,97
+Adult Congenital Heart Disease,60,2342182.31,39036.37,0.00,98
+Mammography Center,12,1602125.47,133510.46,0.00,99
+Slide Preparation Facility,9,1447702.43,160855.83,0.00,100
+Unknown Supplier/Provider Specialty,39,1034120.87,26515.92,0.00,101
+Epileptologists,25,996835.93,39873.44,0.00,102
+Medical Genetics and Genomics,110,936578.18,8514.35,0.00,103
+Medical Toxicology,36,842072.50,23390.90,0.00,104
+Clinic or Group Practice,48,630867.62,13143.08,0.00,105
+Medicare Diabetes Preventive Program,37,347437.06,9390.19,0.00,106
+Oral and Maxillofacial Pathology,14,300849.23,21489.23,0.00,107
+Orofacial Pain,6,153849.39,25641.57,0.00,108
+Prosthodontics,2,25599.71,12799.86,0.00,109
+Dental Anesthesiology,1,12446.21,12446.21,0.00,110
+Oral Medicine,2,12139.39,6069.70,0.00,111
+Periodontics,1,1713.96,1713.96,0.00,112
+Oral and Maxillofacial Radiology,1,742.94,742.94,0.00,113

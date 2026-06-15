@@ -1,0 +1,1 @@
+\copy fact_provider_utilization FROM 'warehouse/fact_provider_utilization.csv' DELIMITER ',' CSV HEADER;
