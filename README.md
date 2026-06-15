@@ -1,35 +1,12 @@
 # Healthcare Analytics Data Warehouse
 
-## Project Overview
+## Overview
 
-This project demonstrates the design and implementation of a Healthcare Analytics Data Warehouse using Medicare Provider Utilization and Payment Data.
+This project demonstrates the design and implementation of a Healthcare Analytics Data Warehouse using Medicare Provider Utilization and Payment data.
 
-The solution combines data engineering, dimensional modeling, SQL analytics, and Power BI reporting to provide healthcare utilization and reimbursement insights at scale.
+The solution combines Python-based ETL development, PostgreSQL dimensional modeling, SQL analytics, and Power BI reporting to support healthcare reimbursement and provider performance analysis at scale.
 
-The project includes:
-
-* End-to-end ETL pipeline development in Python
-* Star schema dimensional modeling
-* PostgreSQL data warehouse implementation
-* Analytical SQL views for reporting
-* Interactive Power BI dashboards
-* Healthcare provider performance analysis
-
----
-
-## Business Problem
-
-Healthcare organizations generate massive volumes of claims, utilization, and reimbursement data.
-
-Without a centralized analytics platform, it becomes difficult to:
-
-* Monitor provider performance
-* Analyze Medicare spending
-* Compare provider specialties
-* Identify high-cost reimbursement patterns
-* Support executive healthcare decision-making
-
-This project addresses these challenges through a scalable healthcare analytics warehouse and reporting solution.
+The project transforms raw healthcare claims data into a star-schema warehouse and delivers executive-level reporting through interactive Power BI dashboards.
 
 ---
 
@@ -45,6 +22,7 @@ This project addresses these challenges through a scalable healthcare analytics 
 
 * SQL
 * Window Functions
+* Common Table Expressions (CTEs)
 * Analytical Views
 
 ### Business Intelligence
@@ -53,8 +31,8 @@ This project addresses these challenges through a scalable healthcare analytics 
 
 ### Development Tools
 
-* VS Code
 * Jupyter Notebook
+* VS Code
 * Git
 * GitHub
 
@@ -74,30 +52,36 @@ dim_location ---- fact_provider_utilization ---- dim_date
 
 ### Fact Table
 
-**fact_provider_utilization**
+#### fact_provider_utilization
 
-Contains provider-level:
+Contains provider-level healthcare utilization and reimbursement metrics including:
 
-* Utilization metrics
-* Medicare reimbursement amounts
-* Beneficiary demographics
+* Medicare payments
+* Submitted charges
+* Beneficiary counts
+* Service counts
+* Drug utilization metrics
+* Medical utilization metrics
+* Beneficiary demographic metrics
 * Risk indicators
-* Specialty performance measures
+
+---
 
 ### Dimension Tables
 
 #### dim_provider
 
-Provider attributes including:
+Provider attributes:
 
 * NPI
+* Provider Name
 * Provider Type
 * Credentials
 * Medicare Participation Status
 
 #### dim_location
 
-Location attributes including:
+Location attributes:
 
 * City
 * State
@@ -106,35 +90,21 @@ Location attributes including:
 
 #### dim_date
 
-Reporting period attributes.
+Reporting period attributes:
 
----
-
-## Dataset
-
-The project uses Medicare Provider Utilization and Payment Data.
-
-### Warehouse Statistics
-
-| Metric             |     Value |
-| ------------------ | --------: |
-| Providers          | 1,296,739 |
-| Locations          |    26,836 |
-| Specialties        |       113 |
-| States/Territories |        62 |
-| Beneficiaries      |   364.99M |
-| Services           |     3.51B |
-| Medicare Payments  |  $120.06B |
+* Reporting Year
+* Quarter
+* Month
 
 ---
 
 ## ETL Pipeline
 
-### Data Extraction
+### Extraction
 
-Loaded raw Medicare provider utilization data.
+Loaded Medicare Provider Utilization data from source CSV files.
 
-### Data Transformation
+### Transformation
 
 Created:
 
@@ -143,29 +113,28 @@ Created:
 * Date Dimension
 * Provider Utilization Fact Table
 
-### Data Loading
+### Loading
 
-Loaded transformed datasets into PostgreSQL warehouse tables.
+Loaded warehouse tables into PostgreSQL.
 
 ### Validation
 
 Performed:
 
 * Row count validation
-* Foreign key validation
 * Data integrity checks
+* Foreign key validation
+* Reimbursement consistency checks
 
 ---
 
-## SQL Analytics
+## Analytical Views
 
-### Reporting Views
+The warehouse includes reusable analytical views for reporting.
 
-The warehouse includes analytical views for business reporting:
+### vw_executive_kpis
 
-#### vw_executive_kpis
-
-Enterprise healthcare KPIs including:
+Provides:
 
 * Total Providers
 * Total Beneficiaries
@@ -173,50 +142,54 @@ Enterprise healthcare KPIs including:
 * Total Submitted Charges
 * Total Medicare Payments
 
-#### vw_top_provider_payments
+### vw_state_medicare_payments
 
-Identifies providers with the highest Medicare reimbursements.
+Provides:
 
-#### vw_state_medicare_payments
+* State-level Medicare spending
+* Beneficiary analysis
+* Service utilization analysis
 
-Analyzes Medicare spending across states.
+### vw_specialty_performance
 
-#### vw_specialty_performance
-
-Analyzes:
+Provides:
 
 * Provider counts
 * Total payments
 * Average payments
-* Payment share by specialty
+* Medicare payment share
+
+### vw_top_provider_payments
+
+Provides:
+
+* Highest reimbursed providers
+* Provider specialty analysis
+* Medicare payment rankings
 
 ---
 
-## Key Business Insights
+## Key Business Metrics
 
-### Executive KPIs
-
-| Metric                  |    Value |
-| ----------------------- | -------: |
-| Total Providers         |    1.30M |
-| Total Beneficiaries     |  364.99M |
-| Total Services          |    3.51B |
-| Total Submitted Charges | $494.00B |
-| Total Medicare Payments | $120.06B |
+| Metric                  |   Value |
+| ----------------------- | ------: |
+| Total Providers         |   1.30M |
+| Total Beneficiaries     | 364.99M |
+| Total Services          |   3.51B |
+| Total Submitted Charges | $494.0B |
+| Total Medicare Payments | $120.1B |
 
 ---
 
-### Highest Medicare Spending States
+## Business Insights
 
-Top states by Medicare payments:
+### Top States by Medicare Payments
 
-1. California
-2. Florida
-3. Texas
-4. New York
-5. Illinois
-
----
+* California
+* Florida
+* Texas
+* New York
+* Illinois
 
 ### Top Specialties by Medicare Payments
 
@@ -226,9 +199,7 @@ Top states by Medicare payments:
 * Clinical Laboratory
 * Hematology-Oncology
 
----
-
-### Highest Average Payment Specialties
+### Highest Average Medicare Payment per Provider
 
 * Clinical Laboratory
 * Ambulatory Surgical Center
@@ -240,23 +211,21 @@ Top states by Medicare payments:
 
 ## Power BI Dashboard
 
-The project includes an interactive Power BI dashboard with two reporting pages.
-
 ### Executive Overview
 
 Provides:
 
 * Enterprise KPIs
-* State-level Medicare spending
+* State-level Medicare payment analysis
 * Specialty payment analysis
-* Top provider reimbursements
+* Top provider rankings
 
 ### Provider Performance Analysis
 
 Provides:
 
 * Medicare payment share by specialty
-* Provider count by specialty
+* Provider counts by specialty
 * Average payment per provider
 * Interactive specialty filtering
 
@@ -274,7 +243,7 @@ Provides:
 
 ---
 
-## Project Structure
+## Repository Structure
 
 ```text
 healthcare-analytics-data-warehouse/
@@ -284,12 +253,15 @@ healthcare-analytics-data-warehouse/
 │   └── healthcare-analytics-data-warehouse.pdf
 │
 ├── data/
-│   └── raw/
+│   ├── raw/
+│   └── sample/
+│       └── claims_sample.csv
 │
 ├── docs/
 │   └── provider_data_dictionary.pdf
 │
 ├── etl/
+│   ├── create_sample_data.py
 │   ├── export_warehouse.py
 │   ├── generate_postgres_schema.py
 │   └── load_warehouse_tables.py
@@ -315,6 +287,8 @@ healthcare-analytics-data-warehouse/
 │   ├── 05_analytical_views.sql
 │   └── 06_business_analysis.sql
 │
+├── warehouse/
+│
 ├── README.md
 ├── requirements.txt
 └── .gitignore
@@ -322,18 +296,34 @@ healthcare-analytics-data-warehouse/
 
 ---
 
-## Project Outcomes
+## Dataset
 
-This project demonstrates:
+This project uses Medicare Provider Utilization and Payment data.
+
+The complete raw dataset is intentionally excluded from version control because of file size constraints.
+
+A sample dataset is included for demonstration purposes:
+
+```text
+data/sample/claims_sample.csv
+```
+
+Users can reproduce the warehouse by supplying the original source data and executing the ETL pipeline.
+
+---
+
+## Skills Demonstrated
 
 * Data Warehouse Design
-* Star Schema Modeling
+* Dimensional Modeling
+* Star Schema Architecture
 * ETL Development
-* PostgreSQL Analytics
-* SQL Reporting
-* Power BI Dashboard Development
+* PostgreSQL
+* SQL Analytics
 * Healthcare Analytics
+* Power BI Dashboard Development
 * Business Intelligence Reporting
+* Data Engineering
 
 ---
 
