@@ -4,30 +4,30 @@
 
 This project demonstrates the design and implementation of a Healthcare Analytics Data Warehouse using Medicare Provider Utilization and Payment Data.
 
-The solution includes:
+The solution combines data engineering, dimensional modeling, SQL analytics, and Power BI reporting to provide healthcare utilization and reimbursement insights at scale.
 
-- End-to-end ETL pipeline development in Python
-- Dimensional data modeling using a Star Schema
-- PostgreSQL data warehouse implementation
-- SQL analytical views and business reporting
-- Power BI executive dashboards
-- Healthcare provider performance analysis
+The project includes:
 
-The platform enables healthcare organizations and analysts to explore provider utilization, Medicare reimbursements, beneficiary demographics, and specialty performance at scale.
+* End-to-end ETL pipeline development in Python
+* Star schema dimensional modeling
+* PostgreSQL data warehouse implementation
+* Analytical SQL views for reporting
+* Interactive Power BI dashboards
+* Healthcare provider performance analysis
 
 ---
 
 ## Business Problem
 
-Healthcare organizations generate massive amounts of claims and reimbursement data.
+Healthcare organizations generate massive volumes of claims, utilization, and reimbursement data.
 
-Without a centralized analytics platform it becomes difficult to:
+Without a centralized analytics platform, it becomes difficult to:
 
-- Monitor provider performance
-- Analyze Medicare spending
-- Identify high-cost specialties
-- Compare state-level healthcare utilization
-- Support executive healthcare decision-making
+* Monitor provider performance
+* Analyze Medicare spending
+* Compare provider specialties
+* Identify high-cost reimbursement patterns
+* Support executive healthcare decision-making
 
 This project addresses these challenges through a scalable healthcare analytics warehouse and reporting solution.
 
@@ -37,32 +37,32 @@ This project addresses these challenges through a scalable healthcare analytics 
 
 ### Data Engineering
 
-- Python
-- Pandas
-- PostgreSQL
+* Python
+* Pandas
+* PostgreSQL
 
 ### Analytics
 
-- SQL
-- Window Functions
-- Analytical Views
+* SQL
+* Window Functions
+* Analytical Views
 
 ### Business Intelligence
 
-- Power BI
+* Power BI
 
 ### Development Tools
 
-- VS Code
-- Jupyter Notebook
-- Git
-- GitHub
+* VS Code
+* Jupyter Notebook
+* Git
+* GitHub
 
 ---
 
 ## Data Warehouse Architecture
 
-### Star Schema Design
+### Star Schema
 
 ```text
                  dim_provider
@@ -76,31 +76,37 @@ dim_location ---- fact_provider_utilization ---- dim_date
 
 **fact_provider_utilization**
 
-Contains provider-level utilization, reimbursement, beneficiary demographics, and risk metrics.
+Contains provider-level:
+
+* Utilization metrics
+* Medicare reimbursement amounts
+* Beneficiary demographics
+* Risk indicators
+* Specialty performance measures
 
 ### Dimension Tables
 
-**dim_provider**
+#### dim_provider
 
-Provider information including:
+Provider attributes including:
 
-- NPI
-- Provider Type
-- Credentials
-- Medicare Participation
+* NPI
+* Provider Type
+* Credentials
+* Medicare Participation Status
 
-**dim_location**
+#### dim_location
 
 Location attributes including:
 
-- City
-- State
-- ZIP Code
-- RUCA Classification
+* City
+* State
+* ZIP Code
+* RUCA Classification
 
-**dim_date**
+#### dim_date
 
-Reporting period information.
+Reporting period attributes.
 
 ---
 
@@ -110,87 +116,79 @@ The project uses Medicare Provider Utilization and Payment Data.
 
 ### Warehouse Statistics
 
-| Metric | Value |
-|----------|----------:|
-| Providers | 1,296,739 |
-| Locations | 26,836 |
-| Reporting Years | 1 |
-| Fact Records | 1,296,739 |
+| Metric             |     Value |
+| ------------------ | --------: |
+| Providers          | 1,296,739 |
+| Locations          |    26,836 |
+| Specialties        |       113 |
+| States/Territories |        62 |
+| Beneficiaries      |   364.99M |
+| Services           |     3.51B |
+| Medicare Payments  |  $120.06B |
 
 ---
 
 ## ETL Pipeline
 
-### 1. Data Extraction
+### Data Extraction
 
-Raw provider claims data loaded from CSV.
+Loaded raw Medicare provider utilization data.
 
-### 2. Data Transformation
+### Data Transformation
 
 Created:
 
-- Provider Dimension
-- Location Dimension
-- Date Dimension
-- Provider Utilization Fact Table
-
-### 3. Data Loading
-
-Loaded transformed data into PostgreSQL warehouse tables.
-
----
-
-## SQL Components
-
-### Schema Creation
-
-```sql
-01_create_schema.sql
-```
-
-Creates all dimension and fact tables.
+* Provider Dimension
+* Location Dimension
+* Date Dimension
+* Provider Utilization Fact Table
 
 ### Data Loading
 
-```sql
-02_load_dimensions.sql
-03_load_fact.sql
-```
-
-Loads warehouse tables.
+Loaded transformed datasets into PostgreSQL warehouse tables.
 
 ### Validation
 
-```sql
-04_validation_queries.sql
-```
+Performed:
 
-Performs:
+* Row count validation
+* Foreign key validation
+* Data integrity checks
 
-- Row count validation
-- Foreign key validation
-- Data integrity checks
+---
 
-### Analytical Views
+## SQL Analytics
 
-```sql
-05_analytical_views.sql
-```
+### Reporting Views
 
-Creates reporting views:
+The warehouse includes analytical views for business reporting:
 
-- vw_executive_kpis
-- vw_top_provider_payments
-- vw_state_medicare_payments
-- vw_specialty_performance
+#### vw_executive_kpis
 
-### Business Analysis
+Enterprise healthcare KPIs including:
 
-```sql
-06_business_analysis.sql
-```
+* Total Providers
+* Total Beneficiaries
+* Total Services
+* Total Submitted Charges
+* Total Medicare Payments
 
-Contains analytical SQL queries used for dashboard development and business insights.
+#### vw_top_provider_payments
+
+Identifies providers with the highest Medicare reimbursements.
+
+#### vw_state_medicare_payments
+
+Analyzes Medicare spending across states.
+
+#### vw_specialty_performance
+
+Analyzes:
+
+* Provider counts
+* Total payments
+* Average payments
+* Payment share by specialty
 
 ---
 
@@ -198,19 +196,19 @@ Contains analytical SQL queries used for dashboard development and business insi
 
 ### Executive KPIs
 
-| Metric | Value |
-|----------|----------:|
-| Total Providers | 1.30M |
-| Total Beneficiaries | 364.99M |
-| Total Services | 3.51B |
-| Total Submitted Charges | $494.0B |
-| Total Medicare Payments | $120.1B |
+| Metric                  |    Value |
+| ----------------------- | -------: |
+| Total Providers         |    1.30M |
+| Total Beneficiaries     |  364.99M |
+| Total Services          |    3.51B |
+| Total Submitted Charges | $494.00B |
+| Total Medicare Payments | $120.06B |
 
 ---
 
 ### Highest Medicare Spending States
 
-Top states by Medicare payments include:
+Top states by Medicare payments:
 
 1. California
 2. Florida
@@ -220,47 +218,47 @@ Top states by Medicare payments include:
 
 ---
 
-### Top Provider Specialties by Medicare Payments
+### Top Specialties by Medicare Payments
 
-- Nurse Practitioner
-- Ophthalmology
-- Internal Medicine
-- Clinical Laboratory
-- Hematology-Oncology
+* Nurse Practitioner
+* Ophthalmology
+* Internal Medicine
+* Clinical Laboratory
+* Hematology-Oncology
 
 ---
 
 ### Highest Average Payment Specialties
 
-- Clinical Laboratory
-- Ambulatory Surgical Center
-- Radiation Therapy Center
-- Medical Oncology
-- Rheumatology
+* Clinical Laboratory
+* Ambulatory Surgical Center
+* Radiation Therapy Center
+* Medical Oncology
+* Rheumatology
 
 ---
 
 ## Power BI Dashboard
 
-The project includes a multi-page Power BI dashboard.
+The project includes an interactive Power BI dashboard with two reporting pages.
 
 ### Executive Overview
 
 Provides:
 
-- Enterprise KPIs
-- State-level Medicare spending
-- Top provider specialties
-- Top providers by reimbursement
+* Enterprise KPIs
+* State-level Medicare spending
+* Specialty payment analysis
+* Top provider reimbursements
 
 ### Provider Performance Analysis
 
 Provides:
 
-- Medicare payment share by specialty
-- Provider counts by specialty
-- Average payment analysis
-- Interactive specialty filtering
+* Medicare payment share by specialty
+* Provider count by specialty
+* Average payment per provider
+* Interactive specialty filtering
 
 ---
 
@@ -287,7 +285,6 @@ healthcare-analytics-data-warehouse/
 │
 ├── data/
 │   └── raw/
-│       └── claims.csv
 │
 ├── docs/
 │   └── provider_data_dictionary.pdf
@@ -318,11 +315,6 @@ healthcare-analytics-data-warehouse/
 │   ├── 05_analytical_views.sql
 │   └── 06_business_analysis.sql
 │
-├── warehouse/
-│   ├── dim_date.csv
-│   ├── dim_location.csv
-│   └── dim_provider.csv
-│
 ├── README.md
 ├── requirements.txt
 └── .gitignore
@@ -334,14 +326,14 @@ healthcare-analytics-data-warehouse/
 
 This project demonstrates:
 
-- Data Warehouse Design
-- Star Schema Modeling
-- ETL Development
-- PostgreSQL Analytics
-- SQL Reporting
-- Power BI Dashboard Development
-- Healthcare Analytics
-- Business Intelligence Reporting
+* Data Warehouse Design
+* Star Schema Modeling
+* ETL Development
+* PostgreSQL Analytics
+* SQL Reporting
+* Power BI Dashboard Development
+* Healthcare Analytics
+* Business Intelligence Reporting
 
 ---
 
